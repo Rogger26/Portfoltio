@@ -1,0 +1,385 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+/*=============== VARIABLES CSS ===============*/
+
+
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(82, 60%, 28%);
+  --title-color: hsl(0, 0%, 15%);
+  --text-color: hsl(0, 0%, 35%);
+  --body-color: hsl(0, 0%, 95%);
+  --container-color: hsl(0, 0%, 100%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 1.25rem;
+  --small-font-size: .813rem;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1120px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --small-font-size: .875rem;
+  }
+}
+
+html {
+  font-family: "Ubuntu", sans-serif;
+  /* color: #fff;
+  background-color: #000; */
+  text-align: center;
+}
+
+/* BARRA DE NAVEGACION============================================================ */
+.navbar {
+  position: fixed;
+  width: 100%;
+  /* background-color: #3c3c3c; */
+  color: #000;
+  z-index: 1; /* Add z-index to make it appear on top of other elements */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* opacity: .6; */
+  padding: 10px 0px 20px 0px;
+}
+
+.nav_logo{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+.ul-navbar{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar.abajo{
+  background-color: #000;
+  opacity: .8;
+  color: #fff;
+  transition: 0.7s;
+  padding: 10px 0px 10px 0px;
+
+}
+
+.navbar ul {
+  list-style-type: none; /* Eliminar los estilos de la lista */
+  display: flex; /* Convertir la lista en un contenedor flexible */
+  justify-content: flex-end;
+  padding: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.navbar li {
+  margin-right: 20px; /* Espacio entre los elementos */
+}
+
+.navbar li:last-child {
+  margin-right: 0; /* No aplicar margen al último elemento */
+}
+
+.navbar a {
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  color: inherit; /* Mantén el color de texto predeterminado */
+  padding: 10px 20px;
+}
+
+.navbar a:hover {
+  background-color: aqua;
+  color: #f0f0f0;
+  transition: ease-in 0.3s;
+  border-radius: 10px;
+}
+/* FIN BARRA DE NAVEGACION============================================================ */
+/* NOMBRE E IMAGEN============================================================ */
+
+.titulo {
+  display: flex;
+  justify-content: center; /* Coloca los elementos a los extremos */
+  align-items: center; /* Centra verticalmente los elementos */
+  background-color: #eef5ff;
+}
+
+.contenido {
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+/*FIN DE NOMBRE E IMAGEN============================================================ */
+
+/* SOBRE MI============================================================ */
+
+.sobre-mi {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: flex-start; /* Alinea arriba verticalmente */
+  text-align: justify;
+  background-color: #b4d4ff;
+}
+
+.sobre-mi-contenido {
+  max-width: 800px; /* Ancho máximo */
+  padding: 20px; /* Espacio interno */
+}
+
+.sobre-mi-h2 {
+  margin-bottom: 10px; /* Espacio inferior */
+}
+
+.sobre-mi-p {
+  margin-bottom: 20px; /* Espacio inferior */
+}
+
+.sobre-mi-detalle {
+  display: flex;
+}
+
+.sobre-mi-educacion {
+  flex: 1; /* Que ocupe el espacio disponible */
+  margin-right: 20px; /* Espacio derecho */
+}
+
+.skills {
+  flex: 1; /* Que ocupe el espacio disponible */
+}
+
+.skills h3 {
+  margin-top: 0; /* Eliminar margen superior */
+  margin-bottom: 10px; /* Espacio inferior */
+}
+
+.skills img {
+  max-width: 50px; /* Ancho máximo de las imágenes */
+  margin-right: 10px; /* Espacio derecho */
+}
+/* FIN DE SOBRE MI============================================================ */
+
+hr {
+  border: 0px; /* le sacamos el borde! */
+  height: 1px; /* le asignamos una altura */
+  color: #86b6f6; /* le ponemos el color que deseamos */
+}
+/* PROYECTOS============================================================ */
+
+.proyectos {
+  display: grid;
+  place-items: center;
+  margin-inline: 1.5rem;
+  padding-block: 5rem;
+}
+
+.card__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+  row-gap: 3.5rem;
+  position: sticky;
+}
+
+
+.card__article {
+  position: relative;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.card__img {
+  width: 328px;
+  border-radius: 1.5rem;
+}
+
+.card__img {
+  width: 100%; /* Hace que el ancho de la imagen sea del 100% del contenedor */
+  height: 328px; /* Ajusta la altura según sea necesario */
+  object-fit: cover; /* Ajusta la propiedad object-fit según prefieras (cover, contain, etc.) */
+  border-radius: 1.5rem;
+}
+
+
+.card__data {
+  width: 182px;
+  background-color: var(--container-color);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -9rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  transition: opacity 1s 1s;
+}
+
+.card__description {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: .25rem;
+}
+
+.card__title {
+  font-size: var(--h2-font-size);
+  font-weight: 500;
+  color: var(--title-color);
+  margin-bottom: .75rem;
+}
+
+.card__button {
+  text-decoration: none;
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  color: var(--first-color);
+}
+
+.card__button:hover {
+  text-decoration: underline;
+}
+
+/* Naming animations in hover */
+.card__article:hover .card__data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.card__article:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+.card__article:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+.card__article:not(:hover) .card__data {
+  animation: remove-data 1s forwards;
+}
+
+/* Card animation */
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateY(-7rem);
+  }
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+/* FIN DE PROYECTOS============================================================ */
+/* CONTACTO============================================================ */
+
+.contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+  align-items: center; /* Centra verticalmente */
+  gap: 20px; /* Espacio entre elementos */
+  background-image: linear-gradient(90deg, #706ded 10%, #1d32f0 90%);
+}
+
+.contacto-titulo {
+  grid-column: 1 / span 2; /* Ocupa las dos columnas */
+}
+
+.contacto-izq {
+  grid-column: 1; /* A la izquierda */
+}
+
+.contacto-der {
+  grid-column: 2; /* A la derecha */
+  text-align: right; /* Alinea el contenido a la derecha */
+}
+/* FIN DE CONTACTO ============================================================ */
+
+footer {
+  display: flex; /* Convertir el contenedor en un contenedor flexible */
+  justify-content: center;
+  background-color: #000;
+  color: #f0f0f0;
+  position: relative;
+  width: 100%;
+}
+
+.flecha {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.flecha:hover {
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.flecha::before,
+.flecha::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.flecha::before {
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.flecha:hover::before {
+  transform: translateY(1px);
+}
+
+.flecha:hover::after {
+  transform: translateY(3px);
+}
+
+.flecha-hacia-arriba {
+  transition: all 0.3s ease;
+}
+.flecha-hacia-arriba {
+  width: 100%;
+}
